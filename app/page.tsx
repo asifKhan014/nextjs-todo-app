@@ -1,6 +1,6 @@
 import AddTodoForm from "@/components/addTodoForm";
 import TodoItem from "../components/todoItem";
-import { addTodo, getTodos } from "./actions";
+import {  getTodos } from "./actions";
 
 export default async function Home() {
   const todos = await getTodos();

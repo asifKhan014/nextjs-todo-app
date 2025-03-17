@@ -4,21 +4,20 @@ import { supabase } from "@/lib/supabase";
 import { revalidatePath } from "next/cache";
 
 export async function addTodo(title: string) {
-  const { error } = await supabase.from("todos").insert({ title });
+   await supabase.from("todos").insert({ title });
 
-  // if (error) throw new Error(error.message);
+  
   revalidatePath("/");
 }
 
 export async function getTodos() {
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from("todos")
     .select("*")
     .order("id", {
       ascending: false,
     });
-    // if (error) throw new Error(error.message);
-
+    
   return data;
 }
 
