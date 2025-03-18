@@ -9,7 +9,7 @@ interface DeleteTodoProps {
 async function DeleteTodo({ id }: DeleteTodoProps) {
   return (
     <form
-      action={async (formData) => {
+      action={async () => {
         "use server";
         await deleteTodo(id);
       }}
