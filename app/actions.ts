@@ -14,9 +14,7 @@ export async function getTodos() {
   const { data } = await supabase
     .from("todos")
     .select("*")
-    .order("id", {
-      ascending: false,
-    });
+    .order("created_at", { ascending: false });
     
   return data;
 }
